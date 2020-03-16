@@ -1,0 +1,163 @@
+######################
+# Project Specific
+######################
+
+
+######################
+# Node
+######################
+/node/**
+/node_tmp/**
+/node_modules/**
+
+######################
+# SASS
+######################
+.sass-cache/**
+
+######################
+# Eclipse
+######################
+*.pydevproject
+.project
+.metadata
+/bin/**
+/tmp/**
+/tmp/**/*
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.classpath
+.settings/**
+**/.settings/**
+.loadpath
+/src/main/resources/rebel.xml
+
+# External tool builders
+.externalToolBuilders/**
+
+# Locally stored "Eclipse launch configurations"
+*.launch
+
+# CDT-specific
+.cproject
+
+# PDT-specific
+.buildpath
+
+######################
+# Intellij
+######################
+.idea/**
+**/.idea/**
+
+*.iml
+*.iws
+*.ipr
+*.ids
+*.orig
+
+######################
+# Maven
+######################
+/log/**
+/target/**
+######################
+# Gradle
+######################
+.gradle/**
+
+######################
+# Package Files
+######################
+*.jar
+*.war
+*.ear
+*.db
+
+######################
+# Windows
+######################
+# Windows image file caches
+Thumbs.db
+
+# Folder config file
+Desktop.ini
+
+######################
+# Mac OSX
+######################
+.DS_Store
+.svn
+
+# Thumbnails
+._*
+
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+
+######################
+# Directories
+######################
+/build/**
+/bin/**
+/spring_loaded/**
+/deploy/**
+
+######################
+# Logs
+######################
+*.log
+**/LOG_FILE_IS_UNDEFINED
+######################
+# Others
+######################
+*.class
+*.*~
+*~
+.merge_file*
+
+######################
+# Gradle Wrapper
+######################
+!gradle/wrapper/gradle-wrapper.jar
+
+######################
+# Maven Wrapper
+######################
+!.mvn/wrapper/maven-wrapper.jar
+
+######################
+# ESLint
+######################
+.eslintcache
+*.prefs
+**/target/**
+
+
+spring-boot-eclient/.factorypath
+spring-cloud-eureka/.factorypath
+spring-cloud-web/.factorypath
+
+cc-consult-service/.factorypath
+cc-complaint-service/.springBeans
+cc-complaint-service/.factorypath
+cc-common-service/.factorypath
+cc-admin-service/.factorypath
+cc-recieve-service/.factorypath
+cc-common-service/LOG_FILE_IS_UNDEFINED
+cc-receive-service/.springBeans
+cc-receive-service/.factorypath
+cc-receive-service/.gitignore
+cc-consult-service/.gitignore
+cc-complaint-service/.gitignore
+cc-common-service/.gitignore
+cc-admin-service/.gitignore
+cc-service/.gitignore
+cc-sys-admin-service/.gitignore
+cc-sinogear-gateway/.gitignore
+cc-sys-admin-service/LOG_FILE_IS_UNDEFINED
+cc-task/.gitignore
