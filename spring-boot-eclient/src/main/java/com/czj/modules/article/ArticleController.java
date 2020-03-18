@@ -17,6 +17,13 @@ public class ArticleController {
 
     @GetMapping("/article/callHello")
     public String callHello() {
+        System.out.println("callHello");
         return restTemplate.getForObject("http://localhost:8083/hello", String.class);
+    }
+
+    @GetMapping("/article/callHello2")
+    public String callHello2() {
+        System.out.println("callHello2");
+        return restTemplate.getForObject("http://spring-boot-web/hello", String.class);
     }
 }

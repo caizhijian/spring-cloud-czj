@@ -1,14 +1,20 @@
 spring:
   application:
     name: eureka-client-article-service
+  servlet:
+    multipart:
+      max-file-size: 30MB
+      max-request-size: 30MB
+  cloud:
+    client:
+      ip-address: 127.0.0.1
 server:
   port: 8082
 
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8762/eureka/
-
+      defaultZone: http://caizhijian:123456@localhost:8761/eureka/
 
   # 采用IP注册
   instance:
@@ -20,3 +26,7 @@ management:
   endpoint:
     health:
       show-details: ALWAYS
+  endpoints:
+    web:
+      exposure:
+        include: ["configprops", "env", "health", "info", "threaddump", "logfile", "jhi-metrics", "prometheus" ]
