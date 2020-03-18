@@ -1,0 +1,7 @@
+server:
+  port: 8761
+  # 指向你的从节点的Eureka
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://caizhijian:123456@localhost:8762/eureka/

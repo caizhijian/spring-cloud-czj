@@ -19,6 +19,10 @@
         <module>spring-cloud-web</module>
         <module>spring-cloud-eureka</module>
         <module>spring-boot-eclient</module>
+        <module>eureka-server-cluster</module>
+        <module>eureka-server-cluster</module>
+        <module>eureka-server-cluster</module>
+        <module>eureka-server-cluster</module>
     </modules>
 
 
