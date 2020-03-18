@@ -14,15 +14,18 @@ server:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://caizhijian:123456@localhost:8761/eureka/
+      defaultZone: http://caizhijian:123456@localhost:8761/eureka/,http://caizhijian:123456@localhost:8762/eureka/
 
 
   # 采用IP注册
   instance:
     preferIpAddress: true
-    ip-address: 127.0.0.1
     # 定义实例ID格式
-    instance-id: ${spring:application:name}:${spring:cloud:client:ip-address}:${server:port}
+    instance-id: ${spring.application.name}:${spring.cloud.client.ip-address}:${server.port}
+    # 默认 30 秒
+    lease-renewal-interval-in-seconds: 5
+    # 默认 90 秒
+    lease-expiration-duration-in-seconds: 5
 
 management:
   endpoint:

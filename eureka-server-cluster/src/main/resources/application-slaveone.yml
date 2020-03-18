@@ -1,0 +1,7 @@
+#从eureka
+server:
+  port: 8762
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://caizhijian:123456@localhost:8761/eureka/

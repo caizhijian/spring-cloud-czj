@@ -6,6 +6,8 @@ spring:
       name: caizhijian
       #密码
       password: 123456
+  profiles:
+    active: master
 
 server:
   port: 8761
@@ -16,3 +18,9 @@ eureka:
     register-with-eureka: false
     # 由于注册中心的职责就是维护服务实例, 它并不需要去检索服务, 所以也设置为 false
     fetch-registry: false
+
+  server:
+    enableSelfPreservation: false
+    enable-self-preservation: false
+    # 默认 60000 毫秒
+    eviction-interval-timer-in-ms: 5000

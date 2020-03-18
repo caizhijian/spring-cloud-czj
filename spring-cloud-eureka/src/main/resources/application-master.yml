@@ -1,6 +1,6 @@
+#主eureka
 server:
   port: 8761
-  # 指向你的从节点的Eureka
 eureka:
   client:
     serviceUrl:
