@@ -136,11 +136,12 @@ Desktop.ini
 .eslintcache
 *.prefs
 **/target/**
-
+rebel.xml
 
 spring-boot-eclient/.factorypath
 spring-cloud-eureka/.factorypath
 spring-cloud-web/.factorypath
+eureka-server-cluster/.factorypath
 
 cc-consult-service/.factorypath
 cc-complaint-service/.springBeans
