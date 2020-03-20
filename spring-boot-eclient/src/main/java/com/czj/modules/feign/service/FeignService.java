@@ -1,5 +1,6 @@
 package com.czj.modules.feign.service;
 
+import com.czj.config.FeignConfiguration;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 
@@ -8,7 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
  * @Author:caizhijian
  * @Date:2020-03-19
  */
-@FeignClient(value = "spring-boot-web")
+@FeignClient(value = "spring-boot-web",configuration = FeignConfiguration.class )
 public interface FeignService {
     /**
      * 测试feign
