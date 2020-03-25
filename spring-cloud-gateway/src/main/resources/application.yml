@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: zuul-demo
+server:
+  port: 2103
+
+zuul:
+  routes:
+    spring-boot-web: /springbootweb/**
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://caizhijian:123456@localhost:8761/eureka/,http://caizhijian:123456@localhost:8762/eureka/
