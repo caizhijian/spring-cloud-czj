@@ -2,6 +2,7 @@ package com.czj.filter;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import com.czj.common.IpUtils;
 import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
 import com.netflix.zuul.exception.ZuulException;
@@ -26,6 +27,7 @@ public class IpFilter extends ZuulFilter {
 
     @Override
     public String filterType() {
+        //pre、route、post、error
         return "pre";
     }
 
@@ -42,9 +44,8 @@ public class IpFilter extends ZuulFilter {
     @Override
     public Object run() throws ZuulException {
         RequestContext ctx = RequestContext.getCurrentContext();
-        ctx.getRequest();
-        String ip = "127.0.0.1";
-//                IpUtils.getIpAddr(ctx.getRequest());
+        String ip = IpUtils.getIpAddr(ctx.getRequest());
+        System.out.println(2/0);
         // 在黑名单中禁用
         if (StringUtils.isNotBlank(ip) && blackIpList.contains(ip)) {
             ctx.setSendZuulResponse(false);
@@ -54,6 +55,7 @@ public class IpFilter extends ZuulFilter {
             json.put("message","非法请求");
             ctx.setResponseBody(json.toString());
             ctx.getResponse().setContentType("application/json; charset=utf-8");
+            ctx.set("result",false);
             return null;
         }
         return null;

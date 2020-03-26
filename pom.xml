@@ -21,6 +21,7 @@
         <module>spring-boot-eclient</module>
         <module>eureka-server-cluster</module>
         <module>spring-cloud-gateway</module>
+        <module>spring-cloud-frame</module>
     </modules>
 
 

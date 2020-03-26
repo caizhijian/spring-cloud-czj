@@ -7,6 +7,21 @@ server:
 zuul:
   routes:
     spring-boot-web: /springbootweb/**
+  retryable: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+ribbon:
+  connectTimeout: 500
+  readTimeout: 5000
+  maxAutoRetries: 1
+  maxAutoRetriesNextServer: 3
+  okToRetryOnAllOperations: true
+  retryableStatusCodes: 500,404,502
 
 eureka:
   client:
