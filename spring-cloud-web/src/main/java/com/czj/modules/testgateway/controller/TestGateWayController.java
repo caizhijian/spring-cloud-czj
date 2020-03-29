@@ -1,20 +1,19 @@
-package com.czj.modules.hello;
+package com.czj.modules.testgateway.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-/*
- *
+/**
  * @Author:caizhijian
- * @Date:2020-03-16
+ * @Date:2020-03-29
  */
 @RestController
-@RequestMapping(value = "/hello")
-public class HelloController {
+@RequestMapping("/spring-boot-web")
+public class TestGateWayController {
 
-    @GetMapping("/sayHello")
-    public String hello(){
-        return "hello";
+    @GetMapping("/hello/sayHello")
+    public String test(){
+        return "123";
     }
 }

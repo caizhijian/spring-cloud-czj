@@ -45,7 +45,6 @@ public class IpFilter extends ZuulFilter {
     public Object run() throws ZuulException {
         RequestContext ctx = RequestContext.getCurrentContext();
         String ip = IpUtils.getIpAddr(ctx.getRequest());
-        System.out.println(2/0);
         // 在黑名单中禁用
         if (StringUtils.isNotBlank(ip) && blackIpList.contains(ip)) {
             ctx.setSendZuulResponse(false);
