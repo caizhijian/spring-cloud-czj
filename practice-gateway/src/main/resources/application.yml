@@ -14,7 +14,7 @@ spring:
         - id: spring-boot-web1
           uri: lb://spring-boot-web #目标地址
           predicates:
-          - Path=/springbootweb/test-gateWay/** #路由规则
+          - Path=/springbootweb/testway/** #路由规则
           filters:
             - RedirectTo=302, http://baidu.com #重定向操作
         - id: spring-boot-web2
@@ -25,7 +25,7 @@ spring:
             - name: CheckAuth2
               args:
                 name: 张三
-            - AddRequestHeader=X-Request-Foo, Bar #添加请求头
+#            - AddRequestHeader=X-Request-Foo, Bar #添加请求头
 #      discovery:
 #        locator:
 #          lowerCaseServiceId: true

@@ -13,7 +13,9 @@ import org.springframework.web.server.ServerWebExchange;
 import reactor.core.publisher.Mono;
 
 import java.nio.charset.StandardCharsets;
-import com.czj.framework.responses.*;
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * @Author caizhijian
  * @create 2020/3/31
@@ -27,9 +29,9 @@ public class IPCheckFilter implements GlobalFilter, Ordered {
         // 此处写得非常绝对, 只作演示用, 实际中需要采取配置的方式
         if (getIp(headers).equals("127.0.0.1")) {
             ServerHttpResponse response = exchange.getResponse();
-            ResponseData data = new ResponseData();
-            data.setCode("401");
-            data.setMessage("非法请求");
+            Map data = new HashMap<>(2);
+            data.put("code","401");
+            data.put("message","非法请求");
 
             byte[] datas =  JSON.toJSONString(data).getBytes(StandardCharsets.UTF_8);
             DataBuffer buffer = response.bufferFactory().wrap(datas);
