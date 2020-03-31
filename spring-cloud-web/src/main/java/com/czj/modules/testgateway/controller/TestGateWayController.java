@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @Date:2020-03-29
  */
 @RestController
-@RequestMapping("/spring-boot-web")
+@RequestMapping("/test-gateWay")
 public class TestGateWayController {
 
     @GetMapping("/hello/sayHello")
