@@ -44,7 +44,7 @@ public class IPCheckFilter implements GlobalFilter, Ordered {
 
     // 这里从请求头中获取用户的实际IP,根据Nginx转发的请求头获取
     private String getIp(HttpHeaders headers) {
-        return "127.0.0.1";
+        return "127.0.0.2";
     }
 
     @Override
