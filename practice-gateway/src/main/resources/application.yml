@@ -17,36 +17,14 @@ spring:
           - Path=/springbootweb/testway/** #路由规则
           filters:
             - RedirectTo=302, http://baidu.com #重定向操作
-
         - id: spring-boot-web2
-          uri: lb://spring-boot-web #目标地址
-          predicates:
-            - Path=/springbootweb/testHystrix/** #路由规则
-          filters:
-            - name: Hystrix #熔断限流测试
-              args:
-                name: fallbackcmd
-                fallbackUri: forward:/fallback
-
-        - id: spring-boot-web3
-          uri: lb://spring-boot-web #目标地址
-          predicates:
-            - Path=/springbootweb/retry/** #路由规则
-          filters:
-            - name: Retry #重试过滤器
-              args:
-                retries: 3 #重试次数
-                series: SERVER_ERROR #状态码配置（分段），符合某段状态码才会进行重试逻辑，默认值是 SERVER_ERROR，值是 5，也就是 5XX（5 开头的状态码），共有 5 个值
-
-        - id: spring-boot-web4
           uri: lb://spring-boot-web #目标地址
           predicates:
             - Path=/springbootweb/** #路由规则
           filters:
-            - name: CheckAuth2 #自定义过滤器
+            - name: CheckAuth2
               args:
                 name: 张三
-
 #            - AddRequestHeader=X-Request-Foo, Bar #添加请求头
 #      discovery:
 #        locator:
