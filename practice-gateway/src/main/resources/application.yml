@@ -1,6 +1,6 @@
 spring:
   application:
-    name: practice-gateway
+    name: practice-gateway-apollo
   servlet:
     multipart:
       max-file-size: 30MB
@@ -68,3 +68,15 @@ eureka:
     lease-renewal-interval-in-seconds: 5
     # 默认 90 秒
     lease-expiration-duration-in-seconds: 5
+
+app:
+  id: apollo-practice
+apollo:
+  meta: http://192.168.1.102:8080
+  bootstrap:
+    enabled: true
+
+testapollo1: 20200419
+testapollo2:
+  testapollo2_1: 1410
+  testapollo2_2: 0000
