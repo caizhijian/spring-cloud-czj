@@ -1,0 +1,38 @@
+server:
+  port: 9091
+
+spring:
+  application:
+    name: spring-boot-admin
+
+  cloud:
+    client:
+      ipAddress: 127.0.0.1
+
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://caizhijian:123456@localhost:8761/eureka/
+
+  instance:
+    preferIpAddress: true
+    instance-id: ${spring.application.name}:${spring.cloud.client.ipAddress}:${server.port}
+    status-page-url: http://${spring.cloud.client.ipAddress}:${server.port}
+    metadata-map:
+      management:
+        context-path: ${server.servlet.context-path}
+    # 默认 30 秒
+    lease-renewal-interval-in-seconds: 5
+    # 默认 90 秒
+    lease-expiration-duration-in-seconds: 5
+
+
+management:
+  endpoint:
+    health:
+      show-details: ALWAYS
+  endpoints:
+    web:
+      exposure:
+        include: "*"
