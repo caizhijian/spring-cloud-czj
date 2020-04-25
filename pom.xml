@@ -23,6 +23,7 @@
         <module>spring-cloud-gateway</module>
         <module>spring-cloud-frame</module>
         <module>practice-gateway</module>
+        <module>spring-boot-admin</module>
     </modules>
 
 
