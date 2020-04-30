@@ -1,0 +1,12 @@
+server:
+  port: 8084
+  servlet:
+    context-path: /task
+
+spring:
+  application:
+    name: spring-boot-task
+  servlet:
+    multipart:
+      max-file-size: 30MB
+      max-request-size: 30MB

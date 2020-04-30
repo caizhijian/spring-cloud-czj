@@ -24,6 +24,7 @@
         <module>spring-cloud-frame</module>
         <module>practice-gateway</module>
         <module>spring-boot-admin</module>
+        <module>task</module>
     </modules>
 
 
