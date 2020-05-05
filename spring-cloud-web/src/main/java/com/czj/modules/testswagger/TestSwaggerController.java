@@ -24,9 +24,9 @@ public class TestSwaggerController {
     @ApiOperation(value = "新增用户")
     @ApiResponses({ @ApiResponse(code = 200, message = "OK", response = UserDto.class) })
     @PostMapping("/user")
-    public UserDto addUser(@RequestBody AddUserParam param) {
+    public String addUser(@RequestBody AddUserParam param) {
         System.err.println(param.getName());
-        return new UserDto();
+        return "0";
     }
 
     @ApiOperation(value = "测试Swagger")
