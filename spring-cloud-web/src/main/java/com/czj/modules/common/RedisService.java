@@ -73,7 +73,9 @@ public class RedisService {
      */
     public void set(String key, String value, long timeOut){
         ValueOperations<String, String> vo = redisTemplate.opsForValue();
-        vo.set(key, value, timeOut, TimeUnit.MINUTES);
+        //随机数，防止雪崩
+        long ran = (long)(Math.random()*20);
+        vo.set(key, value, timeOut+ran, TimeUnit.SECONDS);
     }
 
     /**
@@ -95,6 +97,8 @@ public class RedisService {
         return redisTemplate.delete(key);
    }
 
-
-
+    public static void main(String[] args){
+        System.out.println();
+    }
+    
 }
