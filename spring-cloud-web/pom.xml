@@ -12,6 +12,10 @@
     <artifactId>spring-cloud-web</artifactId>
     <packaging>jar</packaging>
 
+    <properties>
+        <mybatisplus.version>3.1.0</mybatisplus.version>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -89,13 +93,13 @@
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-boot-starter</artifactId>
-            <version>3.1.0</version>
+            <version>${mybatisplus.version}</version>
         </dependency>
         <!-- mybatis plus 代码生成器依赖 -->
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-generator</artifactId>
-            <version>3.1.0</version>
+            <version>${mybatisplus.version}</version>
         </dependency>
         <!-- 代码生成器模板 -->
         <dependency>
