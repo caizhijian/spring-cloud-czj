@@ -14,6 +14,7 @@ import java.util.concurrent.ScheduledFuture;
 /**
  * @Author caizhijian
  * @create 2020/4/30
+ * @describe 定时任务类
  */
 @RestController
 @Component
@@ -29,44 +30,44 @@ public class DynamicTask {
         return new ThreadPoolTaskScheduler();
     }
 
-    /**
-     * 开启MyRunnable
-     * @return
-     */
-    @RequestMapping("/startCron")
-    public String startCron() {
-        future = threadPoolTaskScheduler.schedule(new MyRunnable(), new CronTrigger("0/5 * * * * *"));
-        System.out.println("DynamicTask.startCron()");
-        return "startCron";
-    }
-
-    /**
-     * 停止MyRunnable
-     * @return
-     */
-    @RequestMapping("/stopCron")
-    public String stopCron() {
-        if (future != null) {
-            future.cancel(true);
-        }
-        System.out.println("DynamicTask.stopCron()");
-        return "stopCron";
-    }
-
-    @RequestMapping("/changeCron10")
-    public String startCron10() {
-        stopCron();// 先停止，在开启.
-        future = threadPoolTaskScheduler.schedule(new MyRunnable(), new CronTrigger("*/10 * * * * *"));
-        System.out.println("DynamicTask.startCron10()");
-        return "changeCron10";
-    }
-
-    private class MyRunnable implements Runnable {
-        @Override
-        public void run() {
-            System.out.println("DynamicTask.MyRunnable.run()，" + new Date());
-        }
-    }
+//    /**
+//     * 开启MyRunnable
+//     * @return
+//     */
+//    @RequestMapping("/startCron")
+//    public String startCron() {
+//        future = threadPoolTaskScheduler.schedule(new MyRunnable(), new CronTrigger("0/5 * * * * *"));
+//        System.out.println("DynamicTask.startCron()");
+//        return "startCron";
+//    }
+//
+//    /**
+//     * 停止MyRunnable
+//     * @return
+//     */
+//    @RequestMapping("/stopCron")
+//    public String stopCron() {
+//        if (future != null) {
+//            future.cancel(true);
+//        }
+//        System.out.println("DynamicTask.stopCron()");
+//        return "stopCron";
+//    }
+//
+//    @RequestMapping("/changeCron10")
+//    public String startCron10() {
+//        stopCron();// 先停止，在开启.
+//        future = threadPoolTaskScheduler.schedule(new MyRunnable(), new CronTrigger("*/10 * * * * *"));
+//        System.out.println("DynamicTask.startCron10()");
+//        return "changeCron10";
+//    }
+//
+//    private class MyRunnable implements Runnable {
+//        @Override
+//        public void run() {
+//            System.out.println("DynamicTask.MyRunnable.run()，" + new Date());
+//        }
+//    }
 
 
 }

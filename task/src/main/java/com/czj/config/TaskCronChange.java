@@ -1,4 +1,4 @@
-package com.czj.modules.config;
+package com.czj.config;
 
 import org.springframework.scheduling.Trigger;
 import org.springframework.scheduling.TriggerContext;
