@@ -107,6 +107,12 @@
             <artifactId>freemarker</artifactId>
         </dependency>
 
+        <!--kafka start-->
+        <dependency>
+            <groupId>org.springframework.kafka</groupId>
+            <artifactId>spring-kafka</artifactId>
+        </dependency>
+
     </dependencies>
 
     <!-- Spring Cloud -->
